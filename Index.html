@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webflow Agencies Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden; 
+        }
+        img {
+            object-fit: cover;
+            border-radius: 5.5%;
+        }
+        .hero-bg {
+            background-image: url('Hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100px;
+        }
+        .banner-bg {
+            background-image: url('Hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 400px;
+        }
+        .button-hover-effect {
+            transition: all 0.3s ease;
+        }
+        .button-hover-effect:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .feedback-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .feedback-card:hover {
+            transform: translateY(-5px);
+        }
+        .star-icon {
+            width: 24px;
+            height: 24px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e2e8f0;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .input-field:focus {
+            border-color: #6366f1;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navbar Section -->
+    <nav class="hero-bg py-6 px-4 md:px-8 lg:px-16 flex justify-between items-center rounded-b-xl">
+        <div class="text-2xl font-bold text-blue-700">LOGO</div>
+        <button class="bg-blue-700 text-white px-6 py-3 rounded-xl hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 button-hover-effect">
+            Sign Up
+        </button>
+    </nav>
+
+    <!-- Banner Section -->
+    <header class="banner-bg py-20 md:py-32 lg:py-40 text-center flex flex-col justify-center items-center rounded-b-xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-8 max-w-4xl">
+            Cool Dark UI Template for Webflow Agencies!
+        </h1>
+        <button class="bg-blue-700 text-white px-8 py-4 rounded-xl text-lg hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 button-hover-effect">
+            Stay Focused
+        </button>
+    </header>
+
+    <!-- Action Section -->
+    <section class="py-16 md:py-24 px-4 md:px-8 lg:px-16 flex flex-col md:flex-row items-center justify-center gap-12 bg-white">
+        <div class="text-center md:text-left max-w-md">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">See It in Action</h2>
+            <p class="text-lg text-gray-600 mb-8">
+                Explore the live preview and imagine your brand in this bold new look.
+            </p>
+            <button class="bg-blue-700 text-white px-8 py-4 rounded-xl text-lg hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 button-hover-effect">
+                Launch Live Preview
+            </button>
+        </div>
+        <div class="flex-shrink-0">
+            <img width="100%"  height="100%" src="./wc-mini.png">
+        </div>
+    </section>
+
+    <!-- Productive Users Section -->
+    <section class="bg-blue-50 py-16 md:py-24 px-4 md:px-8 lg:px-16 text-center rounded-xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12">Joined Thousands of Productive Users</h2>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-12">
+            <div class="flex flex-col items-center">
+                <p class="text-5xl font-extrabold text-blue-700 mb-2">50K</p>
+                <p class="text-lg text-gray-600">Active Users</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <p class="text-5xl font-extrabold text-blue-700 mb-2">2M+</p>
+                <p class="text-lg text-gray-600">Projects Launched</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <p class="text-5xl font-extrabold text-blue-700 mb-2">95%</p>
+                <p class="text-lg text-gray-600">Satisfaction Rate</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Users' Feedback Section -->
+    <section class="py-16 md:py-24 px-4 md:px-8 lg:px-16 text-center bg-white">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What our users say</h2>
+        <p class="text-lg text-gray-600 mb-12"></p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Feedback Card 1 -->
+            <div class="feedback-card">
+                <div class="flex mb-2">
+                <img src="icon-star.png">
+                <img src="icon-star.png">
+                <img src="icon-star.png">
+                <img src="icon-star.png">
+                <img src="icon-star.png">
+            </div>
+
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Loved by Designers</h3>
+                <p class="text-gray-700 mb-4">"This template instantly leveled up our presence."- Studio Vertex</p>
+                <div class="flex items-center mt-auto">
+                    <img src="avatar.png" alt="Reviewer Avatar" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <p class="font-semibold text-gray-900">Jane Doe</p>
+                        <p class="text-sm text-gray-500">July 10, 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Card 2 -->
+            <div class="feedback-card">
+                <div class="flex mb-2">
+                <img src="icon-star.png">
+                <img src="icon-star.png">
+                <img src="icon-star.png">
+                <img src="icon-star.png">
+                <img src="icon-star.png">
+            </div>
+            
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Boosted our Workflow</h3>
+                <p class="text-gray-700 mb-4">"This template instantly leveled up our presence."- Studio Vertex</p>
+                <div class="flex items-center mt-auto">
+                    <img src="avatar.png" alt="Reviewer Avatar" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <p class="font-semibold text-gray-900">Rose Smith</p>
+                        <p class="text-sm text-gray-500">July 08, 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Card 3 -->
+            <div class="feedback-card">
+                <div class="flex mb-2">
+                <img src="icon-star.png">
+                <img src="icon-star.png">
+                <img src="icon-star.png">
+                <img src="icon-star.png">
+                <img src="icon-star.png">
+            </div>
+     
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Excellent Support</h3>
+                <p class="text-gray-700 mb-4">"This template instantly leveled up our presence."- Studio Vertex</p>
+                <div class="flex items-center mt-auto">
+                    <img  src="avatar.png" alt="Reviewer Avatar" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <p class="font-semibold text-gray-900">Emily White</p>
+                        <p class="text-sm text-gray-500">July 05, 2025</p>
+                    </div>
+                </div>
+    </section>
+
+    
+    <!-- Ready to Focus Section -->
+    <section class="py-16 md:py-24 px-4 md:px-8 lg:px-16 text-center bg-white flex flex-col justify-center items-center rounded-xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Ready to focus better</h2>
+        <p class="text-lg text-gray-600 mb-12">This template instantly leveled up our presence."-Studio Vertex</p>
+        <button class="bg-blue-700 text-white px-8 py-4 rounded-xl text-lg hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 button-hover-effect mb-12">
+            Get Started Free
+        </button>
+        <div class="flex-shrink-0">
+            <img src="wc-big.png">
+        </div>
+    </section>
+
+    <!-- Touch Section -->
+    <section class="py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-gray-100 flex flex-col md:flex-row items-center justify-center gap-12 rounded-xl">
+        <div class="text-center md:text-left max-w-md">
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Let’s Get in Touch</h2>
+            <p class="text-lg text-gray-600">
+            </p>
+        </div>
+        <div class="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
+            <form>
+                <div class="mb-6">
+                    <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" class="input-field">
+                </div>
+                <div class="mb-6">
+                    <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">Name</label>
+                    <input type="text" id="name" name="name" placeholder="full name" class="input-field">
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-700 text-sm font-semibold mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="write your message...." class="input-field resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-700 text-white px-8 py-4 rounded-xl text-lg hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 button-hover-effect">
+                    Get in Touch
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-5 px-8 md:px-28 lg:px-26 text-center bg-white rounded-t-xl">
+        <div class="text-6xl font-extrabold text-blue-700 mb-4">LOGO</div>
+        <p class="text-gray-600 mb-16 max-w-xl mx-auto">
+            Ready to elevate your online presence? Contact us today to discuss your project and discover how we can bring your vision to life.
+        </p>
+        <div class="flex flex-wrap justify-center gap-6 text-gray-700 text-lg">
+            <a href="#" class="hover:text-blue-700 transition-colors duration-300">Home</a>
+            <a href="#" class="hover:text-blue-700 transition-colors duration-300">About</a>
+            <a href="#" class="hover:text-blue-700 transition-colors duration-300">How it works</a>
+            <a href="#" class="hover:text-blue-700 transition-colors duration-300">Services</a>
+        </div>
+    </footer>
+
+</body>
+</html>
