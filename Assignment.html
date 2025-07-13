@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webflow Agencies Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            color: #374151; /* text-gray-800 */
+        }
+        img {
+            object-fit: cover;
+            border-radius: 5.5%;
+        }
+        .hero-bg {
+            background-image: url('Hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100px;
+            padding: 1.5rem 1rem; /* py-6 px-4 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom-left-radius: 0.75rem; /* rounded-b-xl */
+            border-bottom-right-radius: 0.75rem; /* rounded-b-xl */
+        }
+        .banner-bg {
+            background-image: url('Hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 400px;
+            padding-top: 5rem; /* py-20 */
+            padding-bottom: 5rem; /* py-20 */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-bottom-left-radius: 0.75rem; /* rounded-b-xl */
+            border-bottom-right-radius: 0.75rem; /* rounded-b-xl */
+        }
+        @media (min-width: 768px) {
+            .hero-bg {
+                padding-left: 2rem; /* md:px-8 */
+                padding-right: 2rem; /* md:px-8 */
+            }
+            .banner-bg {
+                padding-top: 8rem; /* md:py-32 */
+                padding-bottom: 8rem; /* md:py-32 */
+            }
+        }
+        @media (min-width: 1024px) {
+            .hero-bg {
+                padding-left: 4rem; /* lg:px-16 */
+                padding-right: 4rem; /* lg:px-16 */
+            }
+            .banner-bg {
+                padding-top: 10rem; /* lg:py-40 */
+                padding-bottom: 10rem; /* lg:py-40 */
+            }
+        }
+
+        .logo {
+            font-size: 3rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            color: #1d4ed8; /* text-blue-700 */
+        }
+        .btn {
+            background-color: #1d4ed8; /* bg-blue-700 */
+            color: white;
+            padding: 0.75rem 1.5rem; /* px-6 py-3 */
+            border-radius: 0.75rem; /* rounded-xl */
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #1e40af; /* hover:bg-blue-800 */
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.5); /* focus:ring-4 focus:ring-blue-300 */
+        }
+        .btn-large {
+            padding: 1rem 2rem; /* px-8 py-4 */
+            font-size: 1.125rem; /* text-lg */
+        }
+
+        .heading-primary {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 800; /* font-extrabold */
+            color: #1f2937; /* text-gray-900 */
+            line-height: 1.25; /* leading-tight */
+            margin-bottom: 2rem; /* mb-8 */
+            max-width: 64rem; /* max-w-4xl */
+        }
+        @media (min-width: 768px) {
+            .heading-primary {
+                font-size: 3rem; /* md:text-5xl */
+            }
+        }
+        @media (min-width: 1024px) {
+            .heading-primary {
+                font-size: 3.75rem; /* lg:text-6xl */
+            }
+        }
+
+        .section-padding {
+            padding: 4rem 1rem; /* py-16 px-4 */
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 2rem; /* md:py-24 md:px-8 */
+            }
+        }
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding-left: 4rem; /* lg:px-16 */
+                padding-right: 4rem; /* lg:px-16 */
+            }
+        }
+
+        .section-action {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem; /* gap-12 */
+            background-color: white;
+        }
+        @media (min-width: 768px) {
+            .section-action {
+                flex-direction: row;
+            }
+        }
+        .text-center {
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .md-text-left {
+                text-align: left;
+            }
+        }
+        .max-w-md {
+            max-width: 28rem;
+        }
+        .heading-secondary {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            color: #1f2937; /* text-gray-900 */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        @media (min-width: 768px) {
+            .heading-secondary {
+                font-size: 2.25rem; /* md:text-4xl */
+            }
+        }
+        .paragraph-lg {
+            font-size: 1.125rem; /* text-lg */
+            color: #4b5563; /* text-gray-600 */
+            margin-bottom: 2rem; /* mb-8 */
+        }
+        .flex-shrink-0 {
+            flex-shrink: 0;
+        }
+
+    .productive-users-section {
+    background-color: #ede9fe; /* New background color to match the image (light purplish-blue) */
+    padding: 4rem 1rem; /* py-16 px-4 */
+    text-align: center;
+    border-radius: 1.5rem; /* Increased border-radius for more pronounced rounding */
+    margin: 0 1rem; /* Add some horizontal margin to create the floating card effect, adjust as needed */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05); /* Optional: add a subtle shadow for depth */
+            }
+
+        @media (min-width: 768px) {
+            .productive-users-section {
+                padding: 6rem 2rem; /* md:py-24 md:px-8 */
+                margin: 0 4rem; /* More margin on larger screens */
+            }
+        }
+        @media (min-width: 1024px) {
+            .productive-users-section {
+                padding-left: 4rem; /* lg:px-16 */
+                padding-right: 4rem; /* lg:px-16 */
+            }
+        }
+
+        .productive-users-section h2 {
+            color: #1f2937; /* Darker heading color to match image */
+            margin-bottom: 3rem; /* mb-12 */
+        }
+
+        .productive-users-section .statistic-number {
+            font-size: 3rem; /* text-5xl */
+            font-weight: 800; /* font-extrabold */
+            color: #6366f1; /* Changed to a more vibrant blue/purple to match the image */
+            margin-bottom: 0.5rem; /* mb-2 */
+        }
+
+        .productive-users-section .statistic-label {
+            font-size: 1.125rem; /* paragraph-lg */
+            color: #4b5563; /* text-gray-600 */
+        }
+
+        /* Ensure these general utility classes are defined if not already */
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .justify-center { justify-content: center; }
+        .items-center { align-items: center; }
+        .gap-12 { gap: 3rem; } /* This looks like a large gap in the image, keep it */
+
+        @media (min-width: 768px) {
+            .md-flex-row { flex-direction: row; }
+        }
+
+        .feedback-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .feedback-card:hover {
+            transform: translateY(-5px);
+        }
+        .star-icon {
+            width: 24px;
+            height: 24px;
+        }
+        .grid {
+            display: grid;
+        }
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+        @media (min-width: 768px) {
+            .md-grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+        .gap-8 {
+            gap: 2rem; /* gap-8 */
+        }
+        .mb-4 {
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        .font-semibold {
+            font-weight: 600;
+        }
+        .text-xl {
+            font-size: 1.25rem; /* text-xl */
+        }
+        .text-gray-900 {
+            color: #1f2937;
+        }
+        .text-gray-700 {
+            color: #374151;
+        }
+        .w-12 {
+            width: 3rem; /* w-12 */
+        }
+       .h-12 {
+            height: 3rem; /* h-12 */
+        }
+        .rounded-full {
+            border-radius: 9999px; /* rounded-full */
+        }
+        .mr-4 {
+            margin-right: 1rem; /* mr-4 */
+        }
+        .text-sm {
+        font-size: 0.875rem; /* text-sm */
+       }
+    .text-gray-500 {
+                   color: #6b7280;
+       }
+    .mt-auto {
+        margin-top: auto;
+    }
+
+       .section-padding {
+    padding: 4rem 1rem; /* py-16 px-4 */
+}
+@media (min-width: 768px) {
+    .section-padding {
+        padding: 6rem 2rem; /* md:py-24 md:px-8 */
+    }
+}
+@media (min-width: 1024px) {
+    .section-padding {
+        padding-left: 4rem; /* lg:px-16 */
+        padding-right: 4rem; /* lg:px-16 */
+    }
+}
+
+
+/* Specific styles for the "Touch Section" to match newsletter.png */
+.touch-section {
+    background-color: #f0f4f8; /* Light blue background from the image */
+    padding: 4rem 1rem; /* py-16 px-4 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem; /* gap-12 */
+    /* Remove border-radius: 0.75rem; if it was on this specific section to make it full width */
+    border-radius: 0; /* Ensures it's not rounded if it was previously */
+}
+
+@media (min-width: 768px) {
+    .touch-section {
+        flex-direction: row;
+        padding: 6rem 2rem; /* md:py-24 md:px-8 */
+    }
+}
+@media (min-width: 1024px) {
+    .touch-section {
+        padding-left: 4rem; /* lg:px-16 */
+        padding-right: 4rem; /* lg:px-16 */
+    }
+}
+
+
+.touch-section .text-center {
+    text-align: left; /* Text is left-aligned in the image */
+    margin-bottom: 0; /* Remove any default bottom margin */
+    /* Adjust max-width as needed if the text needs to take up more space on larger screens */
+    max-width: 28rem; /* Keeps it consistent with max-w-md if you still want it */
+    width: 100%;
+}
+
+.touch-section .text-center h2 {
+    color: #1a202c; /* Darker text color for the heading */
+    font-size: 3rem; /* text-4xl */
+    font-weight: 800; /* font-extrabold */
+    line-height: 1.25; /* leading-tight */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+@media (min-width: 768px) {
+    .touch-section .text-center h2 {
+        font-size: 3rem; /* md:text-5xl */
+    }
+}
+
+
+/* Styles for the form container */
+.touch-section .form-container {
+    background-color: #ffffff; /* White background for the form */
+    padding: 2rem; /* p-8 */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    width: 100%;
+    max-width: 28rem; /* max-w-md */
+}
+
+/* Styles for labels within the form */
+.touch-section label {
+    color: #374151; /* text-gray-700 */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 0.5rem; /* mb-2 */
+    display: block; /* block */
+}
+
+/* Styles for input fields and textarea */
+.touch-section .input-field {
+    width: 100%; /* w-full */
+    padding: 0.75rem; /* p-3 */
+    border-radius: 0.5rem; /* rounded-md */
+    border: 1px solid #e2e8f0; /* border-gray-300 */
+    outline: none;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
+}
+
+.touch-section .input-field:focus {
+    border-color: #6366f1; /* focus:border-indigo-500 */
+}
+
+.touch-section .resize-none {
+    resize: none;
+}
+
+/* Styles for the submit button */
+.touch-section .form-submit-button {
+    width: 100%; /* w-full */
+    background-color: #6366f1; /* bg-indigo-600 - a slightly different blue than the original hero button to match image */
+    color: white; /* text-white */
+    padding: 1rem 2rem; /* px-8 py-4 */
+    border-radius: 0.75rem; /* rounded-xl */
+    font-size: 1.125rem; /* text-lg */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.touch-section .form-submit-button:hover {
+    background-color: #4f46e5; /* hover:bg-indigo-700 */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.touch-section .form-submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.5); /* focus:ring-4 focus:ring-indigo-300 */
+}
+        .footer {
+            padding: 1.25rem 2rem; /* py-5 px-8 */
+            text-align: center;
+            background-color: white;
+            border-top-left-radius: 0.75rem; /* rounded-t-xl */
+            border-top-right-radius: 0.75rem; /* rounded-t-xl */
+        }
+        @media (min-width: 768px) {
+            .footer {
+                padding-left: 7rem; /* md:px-28 */
+                padding-right: 7rem; /* md:px-28 */
+            }
+        }
+        @media (min-width: 1024px) {
+            .footer {
+                padding-left: 6.5rem; /* lg:px-26 */
+                padding-right: 6.5rem; /* lg:px-26 */
+            }
+        }
+        .footer-logo {
+            font-size: 3.75rem; /* text-6xl */
+            font-weight: 800; /* font-extrabold */
+            color: #1d4ed8; /* text-blue-700 */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        .footer-text {
+            color: #4b5563; /* text-gray-600 */
+            margin-bottom: 4rem; /* mb-16 */
+            max-width: 28rem; /* max-w-xl */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem; /* gap-6 */
+            color: #374151; /* text-gray-700 */
+            font-size: 1.125rem; /* text-lg */
+        }
+        .footer-links a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: #1d4ed8; /* hover:text-blue-700 */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <nav class="hero-bg">
+        <div class="logo">LOGO</div>
+        <button class="btn">
+            Sign Up
+        </button>
+    </nav>
+
+    <header class="banner-bg">
+        <h1 class="heading-primary">
+            Cool Dark UI Template for Webflow Agencies!
+        </h1>
+        <button class="btn btn-large">
+            Stay Focused
+        </button>
+    </header>
+
+    <section class="section-padding section-action">
+        <div class="text-center md-text-left max-w-md">
+            <h2 class="heading-secondary">See It in Action</h2>
+            <p class="paragraph-lg">
+                Explore the live preview and imagine your brand in this bold new look.
+            </p>
+            <button class="btn btn-large">
+                Launch Live Preview
+            </button>
+        </div>
+        <div class="flex-shrink-0">
+            <img width="100%" height="100%" src="./wc-mini.png">
+        </div>
+    </section>
+
+<!--Productive User Section-->
+    <section class="productive-users-section section-padding text-center">
+    <h2 class="heading-secondary mb-12">Joined Thousands of Productive Users</h2>
+    <div class="flex flex-col md-flex-row justify-center items-center gap-12">
+        <div class="flex flex-col items-center">
+            <p class="statistic-number">50K</p>
+            <p class="statistic-label">Active Users</p>
+        </div>
+        <div class="flex flex-col items-center">
+            <p class="statistic-number">2M+</p>
+            <p class="statistic-label">Focus Sessions</p> </div>
+        <div class="flex flex-col items-center">
+            <p class="statistic-number">95%</p>
+            <p class="statistic-label">Satisfaction Rate</p>
+        </div>
+    </div>
+</section>
+
+    <section class="section-padding text-center bg-white">
+        <h2 class="heading-secondary mb-4">What our users say</h2>
+        <p class="paragraph-lg mb-12"></p>
+        <div class="grid grid-cols-1 md-grid-cols-3 gap-8">
+            <div class="feedback-card">
+                <div class="flex mb-2">
+                <img src="icon-star.png" class="star-icon">
+                <img src="icon-star.png" class="star-icon">
+                <img src="icon-star.png" class="star-icon">
+                <img src="icon-star.png" class="star-icon">
+                <img src="icon-star.png" class="star-icon">
+            </div>
+
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Loved by Designers</h3>
+                <p class="text-gray-700 mb-4">"This template instantly leveled up our presence."- Studio Vertex</p>
+                <div class="flex items-center mt-auto">
+                    <img src="avatar.png" alt="Reviewer Avatar" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <p class="font-semibold text-gray-900">Jane Doe</p>
+                        <p class="text-sm text-gray-500">July 10, 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-card">
+                <div class="flex mb-2">
+                <img src="icon-star.png" class="star-icon">
+                <img src="icon-star.png" class="star-icon">
+                <img src="icon-star.png" class="star-icon">
+                <img src="icon-star.png" class="star-icon">
+                <img src="icon-star.png" class="star-icon">
+            </div>
+            
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Boosted our Workflow</h3>
+                <p class="text-gray-700 mb-4">"This template instantly leveled up our presence."- Studio Vertex</p>
+                <div class="flex items-center mt-auto">
+                    <img src="avatar.png" alt="Reviewer Avatar" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <p class="font-semibold text-gray-900">Rose Smith</p>
+                        <p class="text-sm text-gray-500">July 08, 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-card">
+                <div class="flex mb-2">
+                <img src="icon-star.png" class="star-icon">
+                <img src="icon-star.png" class="star-icon">
+                <img src="icon-star.png" class="star-icon">
+                <img src="icon-star.png" class="star-icon">
+                <img src="icon-star.png" class="star-icon">
+            </div>
+           
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Excellent Support</h3>
+                <p class="text-gray-700 mb-4">"This template instantly leveled up our presence."- Studio Vertex</p>
+                <div class="flex items-center mt-auto">
+                    <img src="avatar.png" alt="Reviewer Avatar" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <p class="font-semibold text-gray-900">Emily White</p>
+                        <p class="text-sm text-gray-500">July 05, 2025</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    
+    <section class="section-padding text-center bg-white flex flex-col justify-center items-center rounded-xl">
+        <h2 class="heading-secondary mb-8">Ready to focus better</h2>
+        <p class="paragraph-lg mb-12">This template instantly leveled up our presence."-Studio Vertex</p>
+        <button class="btn btn-large mb-12">
+            Get Started Free
+        </button>
+        <div class="flex-shrink-0">
+            <img src="wc-big.png">
+        </div>
+    </section>
+    
+    <!--Touch Section-->
+   <section class="py-16 md:py-24 px-4 md:px-8 lg:px-16 touch-section flex flex-col md:flex-row items-center justify-center gap-12">
+        <div class="text-center md:text-left max-w-md">
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Let’s Get in Touch</h2>
+            <p class="text-lg text-gray-600">
+            </p>
+        </div>
+        <div class="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
+            <form>
+                <div class="w-full max-w-md bg-white p-8 rounded-xl shadow-lg form-container">
+                <div class="mb-6">
+                    <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" class="input-field">
+                </div>
+                <div class="mb-6">
+                    <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">Name</label>
+                    <input type="text" id="name" name="name" placeholder="full name" class="input-field">
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-700 text-sm font-semibold mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="write your message...." class="input-field resize-none"></textarea>
+                </div>
+                <button type="submit" class="form-submit-button">
+                        Get in Touch
+                </button>
+            </form>
+        </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-logo">LOGO</div>
+        <p class="footer-text">
+            Ready to elevate your online presence? Contact us today to discuss your project and discover how we can bring your vision to life.
+        </p>
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">How it works</a>
+            <a href="#">Services</a>
+        </div>
+    </footer>
+
+</body>
+</html>
